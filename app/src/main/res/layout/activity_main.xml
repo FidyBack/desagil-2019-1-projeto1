@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_lista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48sp"
+        android:layout_marginTop="20sp"
+        android:text="Lista de frases mais usadas"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/text_mostrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150sp"
+        android:layout_marginTop="100sp"
+        android:text=""
+        android:textSize="25sp" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="230sp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:id="@+id/button_bom_dia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="10sp"
+                android:paddingHorizontal="95sp"
+                android:paddingVertical="20sp"
+                android:text="  Bom Dia  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_boa_noite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="90sp"
+                android:paddingHorizontal="95sp"
+                android:paddingVertical="20sp"
+                android:text="Boa Noite"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttom_agua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="170sp"
+                android:paddingHorizontal="95sp"
+                android:paddingVertical="20sp"
+                android:text="     Água     "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttom_comida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="250sp"
+                android:paddingHorizontal="95sp"
+                android:paddingVertical="20sp"
+                android:text="   Comida   "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttom_dormir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="330sp"
+                android:paddingHorizontal="95sp"
+                android:paddingVertical="20sp"
+                android:text="   Dormir   "
+                android:textSize="25sp" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
