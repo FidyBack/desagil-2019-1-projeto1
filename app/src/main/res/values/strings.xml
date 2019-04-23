@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Projeto1</string>
+    <string name="lista_de_frases">Lista de Frases</string>
+    <string name="bom_dia">Bom Dia</string>
+    <string name="boa_noite">Boa Noite</string>
+    <string name="agua">Água</string>
+    <string name="comida">Comida</string>
+    <string name="dormir">Dormir</string>
 </resources>
