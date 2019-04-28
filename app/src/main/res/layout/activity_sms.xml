@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="2"
+    tools:context=".SMSActivity">
+
+    <EditText android:id="@+id/text_message"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:gravity="top"
+        android:hint="Mensagem"
+        android:minLines="5" />
+
+    <EditText android:id="@+id/text_phone"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:hint="Telefone"
+        android:inputType="phone" />
+
+    <Button android:id="@+id/button_send"
+        android:layout_height="wrap_content"
+        android:text="Enviar" />
+
+</GridLayout>
