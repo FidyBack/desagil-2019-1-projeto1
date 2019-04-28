@@ -23,10 +23,9 @@ public class SMSActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sms);
 
         EditText textMassage = findViewById(R.id.text_message);
-        EditText textPhone = findViewById(R.id.text_phone);
-        Button buttonSend = findViewById(R.id.button_send);
+        Button buttonContact = findViewById(R.id.button_contact);
 
-        buttonSend.setOnClickListener((view) -> {
+        buttonContact.setOnClickListener((view) -> {
             String message = textMassage.getText().toString();
 
             if (message.isEmpty()) {
@@ -34,7 +33,7 @@ public class SMSActivity extends AppCompatActivity {
                 return;
             }
 
-            String phone = textPhone.getText().toString();
+            String phone = buttonContact.getText().toString();
 
             if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
                 showToast("Número inválido!");
@@ -43,8 +42,6 @@ public class SMSActivity extends AppCompatActivity {
 
             SmsManager manager = SmsManager.getDefault();
             manager.sendTextMessage(phone, null, message, null, null);
-
-            textPhone.setText("");
         });
     }
 }
