@@ -7,11 +7,14 @@
     android:orientation="vertical"
     tools:context=".SMSActivity">
 
-    <EditText android:id="@+id/text_message"
+    <TextView
+        android:id="@+id/text_mostrado"
         android:layout_width="match_parent"
-        android:layout_height="133dp"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="Mensagem" />
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
     <ScrollView
         android:layout_width="match_parent"

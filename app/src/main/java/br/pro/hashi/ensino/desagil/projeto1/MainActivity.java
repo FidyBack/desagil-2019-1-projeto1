@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void startsSMSActivity(){
         Intent intent = new Intent(this, SMSActivity.class);
+        TextView palavraTela = findViewById(R.id.text_mostrado);
+        intent.putExtra("palavra", palavraTela.getText().toString());
         startActivity(intent);
     }
 

@@ -41,8 +41,11 @@ public class SMSActivity extends AppCompatActivity {
         CustomListAdapter whatever = new CustomListAdapter(this, nomeArray, contatoArray);
         listView = findViewById(R.id.listview_Android_Contacts);
         listView.setAdapter(whatever);
+        TextView textMassage = findViewById(R.id.text_mostrado);
 
-        EditText textMassage = findViewById(R.id.text_message);
+        Bundle extras = getIntent().getExtras();
+        String message = extras.getString("palavra");
+        textMassage.setText(message);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
