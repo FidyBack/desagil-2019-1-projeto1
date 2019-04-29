@@ -7,6 +7,7 @@ import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SMSActivity extends AppCompatActivity {
@@ -22,15 +23,19 @@ public class SMSActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
 
-        EditText textMassage = findViewById(R.id.text_message);
+        TextView textMassage = findViewById(R.id.text_mostrado);
         Button buttonContact = findViewById(R.id.button_contact);
+        Bundle extras = getIntent().getExtras();
+
+        String message = extras.getString("palavra");
+        textMassage.setText(message);
 
         buttonContact.setOnClickListener((view) -> {
-            String message = textMassage.getText().toString();
 
+            //The key argument here must match that used in the other activity
             if (message.isEmpty()) {
-                showToast("Mensagem inválida!");
-                return;
+                    showToast("Mensagem inválida!");
+                    return;
             }
 
             String phone = buttonContact.getText().toString();
@@ -40,8 +45,8 @@ public class SMSActivity extends AppCompatActivity {
                 return;
             }
 
-            SmsManager manager = SmsManager.getDefault();
-            manager.sendTextMessage(phone, null, message, null, null);
+                SmsManager manager = SmsManager.getDefault();
+                manager.sendTextMessage(phone, null, message, null, null);
         });
     }
 }
