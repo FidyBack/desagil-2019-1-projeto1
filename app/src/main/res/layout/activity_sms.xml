@@ -7,15 +7,31 @@
     android:orientation="vertical"
     tools:context=".SMSActivity">
 
-    <EditText android:id="@+id/text_message"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/text_mostrado"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="Mensagem"/>
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
-    <Button android:id="@+id/button_contact"
-        android:layout_height="wrap_content"
+    <ScrollView
         android:layout_width="match_parent"
-        android:text= "11946225498" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listview_Android_Contacts"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:choiceMode="singleChoice" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
