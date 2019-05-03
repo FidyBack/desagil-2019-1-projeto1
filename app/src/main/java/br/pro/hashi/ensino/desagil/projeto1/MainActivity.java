@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_SEND_SMS = 0;
 
+
     private void startsSMSActivity(){
         Intent intent = new Intent(this, SMSActivity.class);
         TextView palavraTela = findViewById(R.id.text_mostrado);
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // ==== Lista de Palavras ====
 
         TextView palavraTela = findViewById(R.id.text_mostrado);
+
         Button buttonDia = findViewById(R.id.button_bom_dia);
         Button buttonNoite = findViewById(R.id.button_boa_noite);
         Button buttonAgua = findViewById(R.id.buttom_agua);
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
