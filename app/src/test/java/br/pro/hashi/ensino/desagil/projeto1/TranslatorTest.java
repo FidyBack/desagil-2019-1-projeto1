@@ -423,7 +423,7 @@ public class TranslatorTest {
 
         int i = 0;
 
-        for(String code: codes) {
+        for (String code : codes) {
             Assert.assertEquals(gold[i], code);
 
             i++;

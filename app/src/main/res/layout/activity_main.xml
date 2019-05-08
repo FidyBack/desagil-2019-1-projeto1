@@ -8,22 +8,6 @@
     android:background="#DCDCDC"
     tools:context=".MainActivity">
 
-    <Button android:id="@+id/button_getPermissionSMS"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="SMS"/>
-
-    <TextView android:id="@+id/text_lista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:paddingTop="10sp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:text="Mensagem" />
-
     <TextView android:id="@+id/text_mostrado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
