@@ -8,87 +8,10 @@
     android:background="#DCDCDC"
     tools:context=".MainActivity">
 
-    <Button android:id="@+id/button_getPermissionSMS"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="SMS"/>
-
-    <TextView android:id="@+id/text_lista"
+    <Button android:id="@+id/button_goMessageActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:paddingTop="10sp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:text="Mensagem" />
+        android:text="Escrever Mensagem"/>
 
-    <TextView android:id="@+id/text_mostrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:layout_marginTop="100sp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:text="" />
-
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="120sp">
-
-        <LinearLayout android:id="@+id/layout_botoes"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button_bom_dia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingVertical="20dp"
-                android:text="@string/bom_dia"
-                android:textSize="20sp" />
-
-            <Button android:id="@+id/button_boa_noite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingVertical="20dp"
-                android:text="@string/boa_noite"
-                android:textSize="20sp" />
-
-            <Button android:id="@+id/buttom_agua"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingHorizontal="50dp"
-                android:paddingVertical="20dp"
-                android:text="@string/agua"
-                android:textSize="20sp" />
-
-            <Button android:id="@+id/buttom_comida"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingHorizontal="50dp"
-                android:paddingVertical="20dp"
-                android:text="@string/comida"
-                android:textSize="20sp" />
-
-            <Button android:id="@+id/buttom_dormir"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingHorizontal="50dp"
-                android:paddingVertical="20dp"
-                android:text="@string/dormir"
-                android:textSize="20sp" />
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>
