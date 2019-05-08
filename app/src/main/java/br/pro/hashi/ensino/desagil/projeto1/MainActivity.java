@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private void startsMessageActivity(){
         Intent intent = new Intent(this, MessageActivity.class);
         startActivity(intent);
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Button buttonMessageActivity = findViewById(R.id.button_goMessageActivity);
 

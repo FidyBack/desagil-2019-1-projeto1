@@ -37,7 +37,6 @@ public class SMSActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
-
         CustomListAdapter whatever = new CustomListAdapter(this, nomeArray, contatoArray);
         listView = findViewById(R.id.listview_Android_Contacts);
         listView.setAdapter(whatever);
@@ -46,7 +45,6 @@ public class SMSActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String message = extras.getString("palavra");
         textMassage.setText(message);
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
