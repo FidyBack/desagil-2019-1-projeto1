@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".teste"></activity>
         <activity android:name=".MessageActivity" />
         <activity android:name=".SMSActivity" />
         <activity android:name=".MainActivity">
