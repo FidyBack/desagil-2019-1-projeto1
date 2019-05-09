@@ -8,7 +8,7 @@
     android:background="#DCDCDC"
     tools:context=".MainActivity">
 
-    <TextView android:id="@+id/text_mostrado"
+    <Button android:id="@+id/button_goMessageActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -19,10 +19,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Enviar Mensagem" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </LinearLayout>
