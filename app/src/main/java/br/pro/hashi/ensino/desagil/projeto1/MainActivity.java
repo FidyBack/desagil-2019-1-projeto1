@@ -1,81 +1,54 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final int REQUEST_SEND_SMS = 0;
-
-//    private void startsSMSActivity(){
-//        Intent intent = new Intent(this, SMSActivity.class);
-//        TextView palavraTela = findViewById(R.id.text_mostrado);
-//        intent.putExtra("palavra", palavraTela.getText().toString());
-//        startActivity(intent);
-//    }
+    private static final int NUM_PAGES = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // ==== Lista de Palavras ====
-
-        TextView palavraTela = findViewById(R.id.text_mostrado);
-        Button buttonDia = findViewById(R.id.button_bom_dia);
-        Button buttonNoite = findViewById(R.id.button_boa_noite);
-        Button buttonAgua = findViewById(R.id.buttom_agua);
-        Button buttonComida = findViewById(R.id.buttom_comida);
-        Button buttonDormir = findViewById(R.id.buttom_dormir);
-
-        buttonDia.setOnClickListener((view) -> {
-            String content = buttonDia.getText().toString();
-            palavraTela.setText(palavraTela.getText().toString() + " " + content);
-        });
-
-        buttonNoite.setOnClickListener((view) -> {
-            String content = buttonNoite.getText().toString();
-            palavraTela.setText(palavraTela.getText().toString() + " " + content);
-        });
-
-        buttonAgua.setOnClickListener((view) -> {
-            String content = buttonAgua.getText().toString();
-            palavraTela.setText(palavraTela.getText().toString() + " " + content);
-        });
-
-        buttonComida.setOnClickListener((view) -> {
-            String content = buttonComida.getText().toString();
-            palavraTela.setText(palavraTela.getText().toString() + " " + content);
-        });
-
-        buttonDormir.setOnClickListener((view) -> {
-            String content = buttonDormir.getText().toString();
-            palavraTela.setText(palavraTela.getText().toString() + " " + content);
-        });
-
-        // ==== SMS ====
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-            String[] permissions = new String[]{
-                    Manifest.permission.SEND_SMS,
-            };
-
-            ActivityCompat.requestPermissions(this, permissions, REQUEST_SEND_SMS);
-        }
+        ViewPager mPager = findViewById(R.id.pager);
+        PagerAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPager.setAdapter(pagerAdapter);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == REQUEST_SEND_SMS && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            ;
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        private ScreenSlidePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new MainFragment();
+                case 1:
+                    return new ListFragment();
+                case 2:
+                    return new SMSFragment();
+                default:
+                    return null;
+            }
+        }
+
+//        @Override
+//        public void setPrimaryItem(ViewGroup container, int position, Object object){
+//            position = 1;
+//            super.setPrimaryItem(container, position, object);
+//       }
+
+        @Override
+        public int getCount() {
+            return NUM_PAGES;
         }
     }
 }

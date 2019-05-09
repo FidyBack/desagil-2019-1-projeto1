@@ -1,7 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import android.content.Intent;
-import android.provider.Telephony;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
@@ -9,7 +7,6 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +34,6 @@ public class SMSActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
-
         CustomListAdapter whatever = new CustomListAdapter(this, nomeArray, contatoArray);
         listView = findViewById(R.id.listview_Android_Contacts);
         listView.setAdapter(whatever);
@@ -46,7 +42,6 @@ public class SMSActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String message = extras.getString("palavra");
         textMassage.setText(message);
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
