@@ -1,5 +1,8 @@
 package br.pro.hashi.ensino.desagil.projeto1;
-
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,10 +24,12 @@ import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import java.util.LinkedList;
 import java.util.ArrayList;
 
 public class SMSActivity extends AppCompatActivity implements ValueEventListener {
+
+    private ListView listView;
 
     private ArrayList<String> nomesContatos = new ArrayList<>();
 
@@ -87,7 +92,6 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
 
         Button buttonMainActivity = findViewById(R.id.button_goMainActivity);
         buttonMainActivity.setOnClickListener((view) -> startsMainActivity());
-
         TextView textMassage = findViewById(R.id.text_mostrado);
         Bundle extras = getIntent().getExtras();
         String message = extras.getString("palavrasms");
