@@ -2,6 +2,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -62,18 +63,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
         handler.postDelayed(runnable,1000);
 
-//        TextView textMassage = findViewById(R.id.text_mostrado);
-//        Bundle extras = getIntent().getExtras();
-//        String message = extras.getString("palavramain");
-//        textMassage.setText(message);
-
         Button buttonMessageActivity = findViewById(R.id.button_goListActivity);
         Button buttonSMSActivity = findViewById(R.id.button_goSMSActivity);
 
         buttonMessageActivity.setOnClickListener((view) -> startsMessageActivity());
         buttonSMSActivity.setOnClickListener((view) -> startsSMSActivity());
 
-        buttonSMSActivity.setOnClickListener((view)-> {
+        buttonSMSActivity.setOnClickListener((view) -> {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
                 startsSMSActivity();
             } else {
@@ -82,8 +78,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Manifest.permission.SEND_SMS,
                 };
                 ActivityCompat.requestPermissions(this, permissions, REQUEST_SEND_SMS);
+
             }
         });
+
+        try {
+            TextView textMassage = findViewById(R.id.text_mostrado);
+            Bundle extras = getIntent().getExtras();
+            String message = extras.getString("palavramain");
+            textMassage.setText(message);
+        } catch (java.lang.NullPointerException ex) {
+
+        }
 
         codex.setOnClickListener((view) -> {
             setOpen();

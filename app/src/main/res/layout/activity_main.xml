@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView android:id="@+id/titulo_activity"
+    <TextView
+        android:id="@+id/titulo_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:paddingTop="10sp"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:text="Mensagem"
         android:textColor="#000"
-        android:text="Mensagem" />
-  
+        android:textSize="25sp"
+        android:textStyle="bold" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="330sp"
@@ -62,28 +61,31 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="20sp">
 
-        <Button android:id="@+id/button_goListActivity"
+        <Button
+            android:id="@+id/button_goListActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/button_morse"
             android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/button_morse"
             android:paddingVertical="30sp"
             android:text="Palavras" />
 
-        <Button android:id="@+id/button_morse"
+        <Button
+            android:id="@+id/button_morse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:paddingHorizontal="80sp"
             android:paddingVertical="80sp"
             android:text="Morse" />
 
-        <Button android:id="@+id/button_goSMSActivity"
+        <Button
+            android:id="@+id/button_goSMSActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/button_morse"
             android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/button_morse"
             android:paddingVertical="30sp"
             android:text="Contatos" />
     </RelativeLayout>

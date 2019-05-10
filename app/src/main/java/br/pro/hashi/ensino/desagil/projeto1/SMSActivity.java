@@ -4,11 +4,13 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -22,20 +24,19 @@ import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
-
+import java.util.ArrayList;
 
 public class SMSActivity extends AppCompatActivity implements ValueEventListener {
 
     private ListView listView;
 
-
     private ArrayList<String> nomesContatos = new ArrayList<>();
 
     private void startsMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
+        TextView palavraTela = findViewById(R.id.text_mostrado);
+        intent.putExtra("palavramain", palavraTela.getText().toString());
         startActivity(intent);
     }
 
@@ -51,7 +52,7 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomesContatos);
 
-        listView = findViewById(R.id.listview_Android_Contacts);
+        ListView listView = findViewById(R.id.listview_Android_Contacts);
         listView.setAdapter(arrayAdapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -91,7 +92,6 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
 
         Button buttonMainActivity = findViewById(R.id.button_goMainActivity);
         buttonMainActivity.setOnClickListener((view) -> startsMainActivity());
-
         TextView textMassage = findViewById(R.id.text_mostrado);
         Bundle extras = getIntent().getExtras();
         String message = extras.getString("palavrasms");
@@ -107,10 +107,6 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String text;
                     try {
-                        // O método getValue recebe como parâmetro uma
-                        // classe Java que representa o tipo de dado
-                        // que você acredita estar lá. Se você errar,
-                        // esse método vai lançar uma DatabaseException.
                         text = dataSnapshot.getValue().toString();
                     } catch (DatabaseException exception) {
                         text = "Failed to parse value";
