@@ -5,19 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#DCDCDC"
     tools:context=".MainActivity">
 
-    <Button android:id="@+id/button_goMessageActivity"
+    <TextView android:id="@+id/titulo_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Escrever Mensagem" />
+        android:gravity="center"
+        android:paddingTop="10sp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="Mensagem" />
 
-    <Button android:id="@+id/button_goSMSActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Enviar Mensagem" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="330sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="10sp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_mostrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20sp">
+
+        <Button android:id="@+id/button_goListActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/button_morse"
+            android:layout_centerVertical="true"
+            android:paddingVertical="30sp"
+            android:text="Palavras" />
+
+        <Button android:id="@+id/button_morse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingHorizontal="80sp"
+            android:paddingVertical="80sp"
+            android:text="Morse" />
+
+        <Button android:id="@+id/button_goSMSActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/button_morse"
+            android:layout_centerVertical="true"
+            android:paddingVertical="30sp"
+            android:text="Contatos" />
+    </RelativeLayout>
 </LinearLayout>
