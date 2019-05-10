@@ -21,9 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int REQUEST_SEND_SMS = 0;
     private String armazenador = null;
     private Translator translator;
-    String mensagemFinal;
-    static int count = 0;
-    //private TimerTask timer;
+    private String mensagemFinal;
+    private static int count = 0;
     private Boolean open;
     private Handler handler;
 
@@ -45,20 +44,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        handler = new Handler();
         translator = new Translator();
         open = false;
-        mensagemFinal = " ";
+        mensagemFinal = "";
+
         Button codex = findViewById(R.id.button_morse);
         TextView tela = findViewById(R.id.text_mostrado);
         TextView tela_morse = findViewById(R.id.text_morse);
 
-        handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 relogio(tela, this,tela_morse);
                 handler.postDelayed(this,1000);
-
             }
         };
         handler.postDelayed(runnable,1000);
@@ -78,15 +78,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Manifest.permission.SEND_SMS,
                 };
                 ActivityCompat.requestPermissions(this, permissions, REQUEST_SEND_SMS);
-
             }
         });
 
         try {
-            TextView textMassage = findViewById(R.id.text_mostrado);
             Bundle extras = getIntent().getExtras();
             String message = extras.getString("palavramain");
-            textMassage.setText(message);
+            tela_morse.setText(message);
         } catch (java.lang.NullPointerException ex) {
 
         }
@@ -115,6 +113,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        handler.removeCallbacksAndMessages(null);
+    }
 
     @Override
     public void onClick(View v) {
@@ -123,25 +126,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void relogio(TextView tela, Runnable runnable, TextView tela_traduzida){
         count ++;
-        System.out.println(count);
-        if (open == true){
 
+        if (open){
             if (count == 2){
                 this.armazenador = " ";
                 tela.setText(tela.getText().toString() + armazenador);
-                System.out.println("Letra");
             }
+
             if (count == 5){
                 this.armazenador = "  ";
                 tela.setText(tela.getText().toString() + armazenador);
-                System.out.println("Palavra");
                 stopRepeatingTask(runnable);
                 translate(tela, tela_traduzida);
             }
-
         }
-
-
     }
 
     public void setRelogio(){
@@ -160,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void translate(TextView tela, TextView tela_traduzida){
         List<Character> mensagens = new ArrayList<>();
         String str = tela.getText().toString();
+        String traduzida = tela_traduzida.getText().toString();
         String[] arrOfStr = str.split(" ", 0);
         for (String a : arrOfStr){
             try{
@@ -174,9 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         setMensagemFinal(sb.toString());
 
-        tela_traduzida.setText(getMensagemFinal());
-        System.out.println(getMensagemFinal());
-
+        tela_traduzida.setText(traduzida + getMensagemFinal());
     }
 
     public void setMensagemFinal(String mensagemFinal) {
@@ -184,6 +181,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public String getMensagemFinal() {
-        return mensagemFinal;
+        return " " + mensagemFinal;
     }
 }

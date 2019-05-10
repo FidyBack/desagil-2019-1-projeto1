@@ -24,7 +24,6 @@ import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import java.util.LinkedList;
 import java.util.ArrayList;
 
 public class SMSActivity extends AppCompatActivity implements ValueEventListener {
