@@ -1,32 +1,31 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.telephony.PhoneNumberUtils;
-import android.telephony.SmsManager;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class SMSActivity extends AppCompatActivity {
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class SMSActivity extends AppCompatActivity implements ValueEventListener {
+
     private ListView listView;
 
-    private String[] nomeArray = {"Abel","Rodrigo","Thiago","Luvi","Roger"};
-
-    private String[] contatoArray = {
-            "11946225498",
-            "11962861545",
-            "7191670735",
-            "11991237171",
-            "12982426063"
-    };
+    private ArrayList<String> nomesContatos = new ArrayList<>();
 
     private void showToast(String text){
         Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
-
         toast.show();
     }
 
@@ -34,34 +33,53 @@ public class SMSActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
-        CustomListAdapter whatever = new CustomListAdapter(this, nomeArray, contatoArray);
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomesContatos);
+
         listView = findViewById(R.id.listview_Android_Contacts);
-        listView.setAdapter(whatever);
-        TextView textMassage = findViewById(R.id.text_mostrado);
+        listView.setAdapter(arrayAdapter);
 
-        Bundle extras = getIntent().getExtras();
-        String message = extras.getString("palavra");
-        textMassage.setText(message);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference frases = database.getReference("Contatos");
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        frases.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String message = textMassage.getText().toString();
-                String phone = contatoArray[position];
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                String key = dataSnapshot.getKey();
+                nomesContatos.add(key);
+                arrayAdapter.notifyDataSetChanged();
+            }
 
-                if (message.isEmpty()) {
-                    showToast("Mensagem inválida!");
-                    return;
-                }
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
-                    showToast("Número inválido!");
-                    return;
-                }
+            }
 
-                SmsManager manager = SmsManager.getDefault();
-                manager.sendTextMessage(phone, null, message, null, null);
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
+
+    }
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
     }
 }
