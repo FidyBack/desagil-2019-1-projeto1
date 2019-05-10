@@ -16,9 +16,9 @@ public class CustomListAdapter extends ArrayAdapter {
     //Armazena o número do contato
     private final String[] numeroContato;
 
-    public CustomListAdapter(Activity context, String[] nomeContatoParam, String[] numeroContatoParam){
+    public CustomListAdapter(Activity context, String[] nomeContatoParam, String[] numeroContatoParam) {
 
-        super(context, R.layout.listview_row , nomeContatoParam);
+        super(context, R.layout.listview_row, nomeContatoParam);
 
         this.context = context;
         this.nomeContato = nomeContatoParam;
@@ -27,8 +27,8 @@ public class CustomListAdapter extends ArrayAdapter {
     }
 
     public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater=context.getLayoutInflater();
-        View rowView=inflater.inflate(R.layout.listview_row, null,true);
+        LayoutInflater inflater = context.getLayoutInflater();
+        View rowView = inflater.inflate(R.layout.listview_row, null, true);
 
         //this code gets references to objects in the listview_row.xml file
         TextView nomeTextField = rowView.findViewById(R.id.nomeContato);
@@ -40,7 +40,9 @@ public class CustomListAdapter extends ArrayAdapter {
 
         return rowView;
 
-    };
+    }
+
+    ;
 };
 
 

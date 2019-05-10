@@ -1,56 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SMSActivity">
 
-    <TextView android:id="@+id/text_contacts"
+    <TextView
+        android:id="@+id/text_contacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:paddingTop="10sp"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:text="Contatos"
         android:textColor="#000"
-        android:text="Contatos" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="330sp"
+        android:layout_height="237dp"
         android:layout_marginTop="15sp"
         android:layout_marginBottom="10sp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text_mostrado"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/lista_de_frases"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </ScrollView>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/destinatario"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="1"
+            android:hint="Destinatário" />
+
+        <Button
+            android:id="@+id/button_sendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Enviar" />
+
+    </GridLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button android:id="@+id/button_goMainActivity"
+        <Button
+            android:id="@+id/button_addContact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="160sp"
+            android:layout_marginEnd="10sp"
             android:paddingVertical="30sp"
-            android:layout_marginRight="10sp"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/button_goMainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:paddingVertical="30sp"
             android:text="Morse" />
 
         <ListView

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,16 +7,17 @@
     tools:context=".MessageActivity">
 
 
-    <TextView android:id="@+id/text_lista"
+    <TextView
+        android:id="@+id/text_lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:paddingTop="10sp"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:text="Mensagem"
         android:textColor="#000"
-        android:text="Mensagem" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,10 +37,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text=""
                 android:textColor="#000"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:text=""/>
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 
@@ -48,66 +48,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <Button android:id="@+id/button_goMainActivity"
+        <Button
+            android:id="@+id/button_goMainActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginStart="10sp"
             android:paddingVertical="30sp"
-            android:layout_marginLeft="10sp"
             android:text="Morse" />
 
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true">
 
-            <LinearLayout android:id="@+id/layout_botoes"
+            <LinearLayout
+                android:id="@+id/layout_botoes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="110sp">
+                android:layout_marginHorizontal="110sp"
+                android:orientation="vertical">
 
-                <Button android:id="@+id/button_boa_noite"
+                <Button
+                    android:id="@+id/button_boa_noite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingVertical="20dp"
-                    android:textSize="20sp"
-                    android:text="@string/boa_noite" />
+                    android:text="@string/boa_noite"
+                    android:textSize="20sp" />
 
-                <Button android:id="@+id/button_bom_dia"
+                <Button
+                    android:id="@+id/button_bom_dia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingVertical="20dp"
-                    android:textSize="20sp"
-                    android:text="@string/bom_dia" />
+                    android:text="@string/bom_dia"
+                    android:textSize="20sp" />
 
-                <Button android:id="@+id/buttom_agua"
+                <Button
+                    android:id="@+id/buttom_agua"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingVertical="20dp"
-                    android:textSize="20sp"
-                    android:text="@string/agua" />
+                    android:text="@string/agua"
+                    android:textSize="20sp" />
 
-                <Button android:id="@+id/buttom_comida"
+                <Button
+                    android:id="@+id/buttom_comida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingVertical="20dp"
-                    android:textSize="20sp"
-                    android:text="@string/comida" />
+                    android:text="@string/comida"
+                    android:textSize="20sp" />
 
-                <Button android:id="@+id/buttom_dormir"
+                <Button
+                    android:id="@+id/buttom_dormir"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingVertical="20dp"
-                    android:textSize="20sp"
-                    android:text="@string/dormir" />
+                    android:text="@string/dormir"
+                    android:textSize="20sp" />
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
