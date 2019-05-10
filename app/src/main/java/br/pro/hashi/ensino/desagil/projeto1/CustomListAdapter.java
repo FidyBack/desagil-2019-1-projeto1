@@ -48,7 +48,9 @@ public class CustomListAdapter<S, I extends Number> extends ArrayAdapter {
 
         return rowView;
 
-    };
+    }
+
+    ;
 };
 
 

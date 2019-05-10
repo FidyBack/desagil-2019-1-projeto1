@@ -1,11 +1,11 @@
 package br.pro.hashi.ensino.desagil.projeto1;
-
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.ArrayAdapter;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.widget.Button;
@@ -27,6 +27,7 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
 
     private ListView listView;
 
+
     private ArrayList<String> nomesContatos = new ArrayList<>();
 
     private void startsMainActivity() {
@@ -34,7 +35,7 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
         startActivity(intent);
     }
 
-    private void showToast(String text){
+    private void showToast(String text) {
         Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
         toast.show();
     }
