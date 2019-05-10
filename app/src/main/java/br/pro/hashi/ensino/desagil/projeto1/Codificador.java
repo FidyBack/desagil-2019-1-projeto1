@@ -26,15 +26,15 @@ public class Codificador extends AppCompatActivity implements View.OnClickListen
         translator = new Translator();
         open = false;
         mensagemFinal = " ";
-        setContentView(R.layout.activity_button);
-        Button codex = findViewById(R.id.button3);
+        setContentView(R.layout.activity_main);
+        Button codex = findViewById(R.id.button_morse);
         TextView tela = findViewById(R.id.text_mostrado);
-        TextView tradu = findViewById(R.id.text_traduzido);
+        //TextView tradu = findViewById(R.id.text_traduzido);
         handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                relogio(tela, this,tradu);
+                relogio(tela, this);
                 handler.postDelayed(this,1000);
 
             }
@@ -71,7 +71,7 @@ public class Codificador extends AppCompatActivity implements View.OnClickListen
 
 
 
-    public void relogio(TextView tela, Runnable runnable, TextView tradu){
+    public void relogio(TextView tela, Runnable runnable){
         count ++;
         System.out.println(count);
         if (open == true){
@@ -86,7 +86,7 @@ public class Codificador extends AppCompatActivity implements View.OnClickListen
                 tela.setText(tela.getText().toString() + armazenador);
                 System.out.println("Palavra");
                 stopRepeatingTask(runnable);
-                translate(tela, tradu);
+                translate(tela);
             }
 
         }
@@ -107,7 +107,7 @@ public class Codificador extends AppCompatActivity implements View.OnClickListen
         handler.removeCallbacks(runnable);
     }
 
-    public void translate(TextView tela, TextView tradu){
+    public void translate(TextView tela){
         List<Character> mensagens = new ArrayList<>();
         String str = tela.getText().toString();
         String[] arrOfStr = str.split(" ", 0);
@@ -124,7 +124,7 @@ public class Codificador extends AppCompatActivity implements View.OnClickListen
         }
         setMensagemFinal(sb.toString());
 
-        tradu.setText(getMensagemFinal());
+        tela.setText(tela.getText().toString() + getMensagemFinal());
         System.out.println(getMensagemFinal());
 
     }
