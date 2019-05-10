@@ -24,16 +24,17 @@
         android:textColor="#000"
         android:text="Mensagem" />
 
-    <TextView android:id="@+id/text_mostrado"
+    <TextView
+        android:id="@+id/text_mostrado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:gravity="center"
         android:layout_marginTop="100sp"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:gravity="center"
+        android:text=""
         android:textColor="#000"
-        android:text="" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="fill_parent"

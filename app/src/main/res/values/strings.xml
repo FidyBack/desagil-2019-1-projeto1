@@ -6,4 +6,5 @@
     <string name="agua">Água</string>
     <string name="comida">Comida</string>
     <string name="dormir">Dormir</string>
+    <string name="button">Button</string>
 </resources>

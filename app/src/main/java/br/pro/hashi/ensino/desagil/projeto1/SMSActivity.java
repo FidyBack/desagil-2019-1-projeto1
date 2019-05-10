@@ -1,15 +1,11 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import android.content.Intent;
-import android.provider.Telephony;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,17 +13,18 @@ import android.widget.Toast;
 public class SMSActivity extends AppCompatActivity {
     private ListView listView;
 
-    private String[] nomeArray = {"Abel","Rodrigo","Thiago","Luvi","Roger"};
+    private String[] nomeArray = {"Abel", "Rodrigo", "Thiago", "Luvi", "Roger", "Teste"};
 
     private String[] contatoArray = {
             "11946225498",
             "11962861545",
             "7191670735",
             "11991237171",
-            "12982426063"
+            "12982426063",
+            "11111111111",
     };
 
-    private void showToast(String text){
+    private void showToast(String text) {
         Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
 
         toast.show();
