@@ -1,8 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.widget.ArrayAdapter;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,6 +21,7 @@ import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class SMSActivity extends AppCompatActivity implements ValueEventListener {
@@ -96,7 +94,7 @@ public class SMSActivity extends AppCompatActivity implements ValueEventListener
         String message = extras.getString("palavrasms");
         textMassage.setText(message);
 
-        EditText destinatario = findViewById(R.id.destinatario);
+        TextView destinatario = findViewById(R.id.destinatario);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             DatabaseReference phone = contatosFBReference.child(nomesContatos.get(position));

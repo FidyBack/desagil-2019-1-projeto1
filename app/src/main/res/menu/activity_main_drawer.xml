@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Char to morse">
+            <item
+                android:id="@+id/a"
+
+                android:title="a .-" />
+            <item
+                android:id="@+id/b"
+
+                android:title="b -..." />
+            <item
+                android:id="@+id/c"
+
+                android:title="c -.-." />
+            <item
+                android:id="@+id/d"
+
+                android:title="d -.." />
+            <item
+                android:id="@+id/e"
+
+                android:title="e ." />
+            <item
+                android:id="@+id/f"
+
+                android:title="f ..-." />
+            <item
+                android:id="@+id/g"
+
+                android:title="g --." />
+            <item
+                android:id="@+id/h"
+
+                android:title="h ...." />
+            <item
+                android:id="@+id/i"
+
+                android:title="i .." />
+            <item
+                android:id="@+id/j"
+
+                android:title="j .---" />
+            <item
+                android:id="@+id/k"
+
+                android:title="k -.-" />
+            <item
+                android:id="@+id/l"
+
+                android:title="l .-.." />
+            <item
+                android:id="@+id/m"
+
+                android:title="m --" />
+            <item
+                android:id="@+id/n"
+
+                android:title="n -." />
+            <item
+                android:id="@+id/o"
+
+                android:title="o ---" />
+            <item
+                android:id="@+id/p"
+
+                android:title="p .--." />
+            <item
+                android:id="@+id/q"
+
+                android:title="q --.-" />
+            <item
+                android:id="@+id/r"
+
+                android:title="r .-." />
+            <item
+                android:id="@+id/s"
+
+                android:title="s ..." />
+            <item
+                android:id="@+id/t"
+
+                android:title="t -" />
+            <item
+                android:id="@+id/u"
+
+                android:title="u ..-" />
+            <item
+                android:id="@+id/v"
+
+                android:title="v ...-" />
+            <item
+                android:id="@+id/w"
+
+                android:title="w .--" />
+            <item
+                android:id="@+id/x"
+
+                android:title="x -..-" />
+            <item
+                android:id="@+id/y"
+
+                android:title="y -.--" />
+            <item
+                android:id="@+id/z"
+
+                android:title="z --.." />
+            <item
+                android:id="@+id/z0"
+
+                android:title="0 -----" />
+            <item
+                android:id="@+id/z1"
+
+                android:title="1 .----" />
+            <item
+                android:id="@+id/z2"
+
+                android:title="2 ..---" />
+            <item
+                android:id="@+id/z3"
+
+                android:title="3 ...--" />
+            <item
+                android:id="@+id/z4"
+
+                android:title="4 ....-" />
+            <item
+                android:id="@+id/z5"
+
+                android:title="5 ....." />
+            <item
+                android:id="@+id/z6"
+
+                android:title="6 -...." />
+            <item
+                android:id="@+id/z7"
+
+                android:title="7 --..." />
+            <item
+                android:id="@+id/z8"
+
+                android:title="8 ---.." />
+            <item
+                android:id="@+id/z9"
+
+                android:title="9 ----." />
+        </item>
+    </group>
+
+        <item android:title="Morse to Char">
+            <menu>
+                <item
+                    android:id="@+id/e-cm"
+
+                    android:title="e ." />
+                <item
+                    android:id="@+id/t-cm"
+
+                    android:title="t -" />
+                <item
+                    android:id="@+id/i-cm"
+
+                    android:title="i .." />
+                <item
+                    android:id="@+id/a-cm"
+
+                    android:title="a .-" />
+                <item
+                    android:id="@+id/n-cm"
+
+                    android:title="n -." />
+                <item
+                    android:id="@+id/m-cm"
+
+                    android:title="m --" />
+                <item
+                    android:id="@+id/s-cm"
+
+                    android:title="s ..." />
+                <item
+                    android:id="@+id/u-cm"
+
+                    android:title="u ..-" />
+                <item
+                    android:id="@+id/r-cm"
+
+                    android:title="r .-." />
+                <item
+                    android:id="@+id/w-cm"
+
+                    android:title="w .--" />
+                <item
+                    android:id="@+id/d-cm"
+
+                    android:title="d -.." />
+                <item
+                    android:id="@+id/k-cm"
+
+                    android:title="k -.-" />
+                <item
+                    android:id="@+id/g-cm"
+
+                    android:title="g --." />
+                <item
+                    android:id="@+id/o-cm"
+
+                    android:title="o ---" />
+                <item
+                    android:id="@+id/h-cm"
+
+                    android:title="h ...." />
+                <item
+                    android:id="@+id/v-cm"
+
+                    android:title="v ...-" />
+                <item
+                    android:id="@+id/f-cm"
+
+                    android:title="f ..-." />
+                <item
+                    android:id="@+id/l-cm"
+
+                    android:title="l .-.." />
+                <item
+                    android:id="@+id/p-cm"
+
+                    android:title="p .--." />
+                <item
+                    android:id="@+id/j-cm"
+
+                    android:title="j .---" />
+                <item
+                    android:id="@+id/b-cm"
+
+                    android:title="b -..." />
+                <item
+                    android:id="@+id/x-cm"
+
+                    android:title="x -..-" />
+                <item
+                    android:id="@+id/c-cm"
+
+                    android:title="c -.-." />
+                <item
+                    android:id="@+id/y-cm"
+
+                    android:title="y -.--" />
+                <item
+                    android:id="@+id/z-cm"
+
+                    android:title="z --.." />
+                <item
+                    android:id="@+id/q-cm"
+
+                    android:title="q --.-" />
+                <item
+                    android:id="@+id/cinco-cm"
+
+                    android:title="5 ....." />
+                <item
+                    android:id="@+id/quatro-cm"
+
+                    android:title="4 ....-" />
+                <item
+                    android:id="@+id/tres-cm"
+
+                    android:title="3 ...--" />
+                <item
+                    android:id="@+id/dois-cm"
+
+                    android:title="2 ..---" />
+                <item
+                    android:id="@+id/um-cm"
+
+                    android:title="1 .----" />
+                <item
+                    android:id="@+id/seis-cm"
+
+                    android:title="6 -...." />
+                <item
+                    android:id="@+id/sete-cm"
+
+                    android:title="7 --..." />
+                <item
+                    android:id="@+id/oito-cm"
+
+                    android:title="8 ---.." />
+                <item
+                    android:id="@+id/nove-cm"
+
+                    android:title="7 ----." />
+                <item
+                    android:id="@+id/zero-cm"
+
+                    android:title="0 -----" />
+            </menu>
+        </item>
+</menu>

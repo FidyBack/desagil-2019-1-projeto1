@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "802353850440-eb1tg0enkiggegr20a2pf13foig8fse4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.pro.hashi.ensino.desagil.projeto1",
+            "certificate_hash": "2c307c5e455d11b37377c9a2f099819dc5d7a8b5"
+          }
+        },
+        {
           "client_id": "802353850440-78il3hrrhitnao1p9sfplelk4lrtfuo8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
